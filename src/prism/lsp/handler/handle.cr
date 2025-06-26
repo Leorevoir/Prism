@@ -116,49 +116,6 @@ module Prism
         nil
       end
 
-      private def self._completion(server : Server, message : Message) : Message?
-        completions = [
-          {
-            "label" => "puts",
-            "kind" => 3,
-            "detail" => "puts(object) : Nil",
-            "documentation" => "Prints objects to STDOUT"
-          },
-          {
-            "label" => "p",
-            "kind" => 3,
-            "detail" => "p(object) : Nil",
-            "documentation" => "Prints the inspect representation of an object"
-          },
-          {
-            "label" => "def",
-            "kind" => 14,
-            "detail" => "def method_name",
-            "documentation" => "Define a method"
-          },
-          {
-            "label" => "class",
-            "kind" => 7,
-            "detail" => "class ClassName",
-            "documentation" => "Define a class"
-          },
-          {
-            "label" => "module",
-            "kind" => 9,
-            "detail" => "module ModuleName",
-            "documentation" => "Define a module"
-          }
-        ]
-
-        result = JSON.parse(%({"items": #{completions.to_json}}))
-
-        Message.new(
-          jsonrpc: "2.0",
-          id: message.id,
-          result: result
-        )
-      end
-
       private def self._hover(server : Server, message : Message) : Message?
         hover_content = {
           "contents" => {
