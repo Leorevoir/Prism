@@ -8,3 +8,7 @@ if ARGV.includes?("--version")
   puts "Prism version #{Prism::VERSION}"
   exit 0
 end
+
+server = Prism::Lsp::Server.new
+server.start
+
