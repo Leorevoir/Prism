@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Crystal::Lsp do
+describe Prism do
   # TODO: Write tests
 
   it "works" do
