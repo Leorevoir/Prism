@@ -1,0 +1,13 @@
+name: crystal-lsp
+version: 0.1.0
+
+authors:
+  - Leorevoir <leo.quinzler@epitech.eu>
+
+targets:
+  crystal-lsp:
+    main: src/crystal-lsp.cr
+
+crystal: '>= 1.16.3'
+
+license: MIT
